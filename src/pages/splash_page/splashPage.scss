@@ -1,0 +1,41 @@
+.splash {
+	width: 100%;
+	height: 100vh;
+	background-image: url("../../media/splash_background.jpeg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: row;
+
+	&_title {
+		width: 50%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		padding-bottom: 5%;
+		&_description {
+			max-width: 70%;
+		}
+		color: white;
+	}
+}
+.splash-logo {
+	font-size: 50px;
+	font-weight: 400;
+	display: inline;
+	font-size: 150px;
+}
+
+@media (max-width: 750px) {
+	.splash {
+		&_title {
+			display: none;
+		}
+		align-items: center;
+		justify-content: center;
+	}
+	.register {
+		width: 100%;
+	}
+}

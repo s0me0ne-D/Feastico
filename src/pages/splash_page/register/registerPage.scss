@@ -1,0 +1,98 @@
+@import "../../../styles_global/fonts";
+@import "../../../styles_global/colors";
+@import "../../../styles_global/animations";
+@keyframes form_vision {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.register {
+	width: 50%;
+	height: 100vh;
+	font-family: $TEXT_FONT;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&_container {
+		width: 300px;
+		height: 400px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: rgba(255, 255, 255, 0.95);
+		border-radius: 10px;
+		padding: 20px;
+		.user_data {
+			position: relative;
+			width: 100%;
+			height: 30px;
+			display: flex;
+			align-items: center;
+			border-bottom: 1px solid #e8e8e8;
+			input {
+				width: 100%;
+				background: transparent;
+			}
+			.error_message {
+				position: absolute;
+				bottom: -13px;
+				z-index: 999;
+				font-size: 10px;
+				color: red;
+			}
+		}
+	}
+	&_title {
+		font-family: $TITLE_FONT;
+		font-size: 30px;
+		font-weight: bold;
+		margin-bottom: 30px;
+	}
+
+	&_form {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+		animation: 0.5s linear forwards form_vision;
+		.error_message_login {
+			position: absolute;
+			text-align: center;
+			bottom: 15%;
+			z-index: 999;
+			font-size: 15px;
+			color: red;
+		}
+	}
+	.submit_button {
+		background-color: $BUTTON_COLOR;
+		width: 100px;
+		height: 35px;
+		border-radius: 3px;
+		color: white;
+		transition: $BUTTON_TRANSITION;
+		&:hover {
+			background-color: $BUTTON_COLOR_HOVER;
+		}
+	}
+	&_footer {
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-end;
+		&_button {
+			color: $BUTTON_COLOR;
+			background: transparent;
+			text-decoration: underline;
+			&:hover {
+				color: $BUTTON_COLOR_HOVER;
+			}
+		}
+	}
+}

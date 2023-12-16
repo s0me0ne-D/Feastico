@@ -1,0 +1,51 @@
+@import "../../../styles_global/colors";
+@import "../../../styles_global/animations";
+.header {
+	height: 60px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-end;
+	.header-logo {
+		font-size: 50px;
+		font-weight: bold;
+	}
+
+	&_nav-bar {
+		display: flex;
+		gap: 10px;
+		&_section {
+			height: 30px;
+			background: transparent;
+			padding: 0 10px;
+			display: flex;
+			align-items: center;
+			.section_title {
+				border-bottom: 1px solid white;
+				transition: $BUTTON_TRANSITION;
+			}
+			&:hover {
+				.section_title {
+					border-bottom: 1px solid $BUTTON_COLOR;
+				}
+			}
+		}
+	}
+	&_right-elements {
+		display: flex;
+		gap: 10px;
+	}
+	&_search {
+		height: 30px;
+		display: flex;
+		align-items: center;
+
+		input {
+			height: 20px;
+			border: 1px solid $BORDER_COLOR;
+			border-radius: 5px;
+		}
+	}
+	&_account-logo {
+	}
+}
