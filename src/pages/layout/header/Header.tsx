@@ -1,7 +1,7 @@
 import React from "react";
 import { Logo } from "../../../media/logo/Logo";
-import { NavBar } from "./header_elements/NavBar";
-import { Search } from "./header_elements/Search";
+import { NavBar } from "./header_components/nav_bar/NavBar";
+import { Search } from "./header_components/Search";
 import AccountLogo from "../../../media/icons/AccountLogo.svg";
 import "./header.scss";
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IUser } from "../../../../interface/user_interfsce";
-import { Password } from "./form_elements/Password";
-import { Email } from "./form_elements/Email";
+import { Password } from "./form_components/Password";
+import { Email } from "./form_components/Email";
 import { authentication } from "../../../../utils/authentication";
 import { useDispatch } from "react-redux";
 import { signUp } from "../../../../redux/userSlice";

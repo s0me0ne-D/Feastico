@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Email } from "./form_elements/Email";
-import { Password } from "./form_elements/Password";
-import { Name } from "./form_elements/Name";
-import { ConfirmPassword } from "./form_elements/ConfirmPassword";
+import { Email } from "./form_components/Email";
+import { Password } from "./form_components/Password";
+import { Name } from "./form_components/Name";
+import { ConfirmPassword } from "./form_components/ConfirmPassword";
 import { IUser } from "../../../../interface/user_interfsce";
 import { setLocalStorage } from "../../../../utils/setLocalStorage";
 

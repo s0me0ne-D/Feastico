@@ -7,5 +7,10 @@ import { router } from "./Router";
 
 export const Main = () => {
 	const { isAuthorized } = useSelector((state: RootStore) => state.userReducer);
-	return isAuthorized ? <RouterProvider router={router} /> : <SplashPage />;
+	return (
+		// isAuthorized ?
+		<RouterProvider router={router} />
+		// :
+		// <SplashPage />
+	);
 };

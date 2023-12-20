@@ -39,8 +39,4 @@ Join our vibrant community by sharing your own recipes, culinary creations, and 
 
 Start your culinary journey with Feastico today and let the flavors of the world come alive in your kitchen!
 
-## Contribution
-
-We welcome contributions from the community! If you'd like to contribute to Feastico, please check out our [Contribution Guidelines](CONTRIBUTING.md).
-
 ---

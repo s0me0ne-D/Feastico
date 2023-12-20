@@ -5,7 +5,6 @@ export const Search = () => {
 	return (
 		<div className="header_search">
 			<SearchIcon />
-			<input type="text" />
 		</div>
 	);
 };

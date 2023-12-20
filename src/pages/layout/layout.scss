@@ -1,5 +1,14 @@
 @import "../../styles_global/fonts";
 .layout {
+	min-height: 100vh;
+	display: flex;
+	align-items: stretch;
+	flex-direction: column;
 	margin: 0 175px;
 	font-family: $TEXT_FONT;
+}
+@media (max-width: 1000px) {
+	.layout {
+		margin: 0 50px;
+	}
 }
