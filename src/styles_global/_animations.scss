@@ -1,1 +1,11 @@
 $BUTTON_TRANSITION: 0.1s ease-in;
+
+@keyframes vision-animation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+$VISION_ANIMATION: vision-animation 0.1s ease-in forwards;

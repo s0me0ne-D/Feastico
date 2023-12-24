@@ -2,15 +2,12 @@
 .home_title {
 	display: flex;
 	flex-direction: row;
-	max-width: 100%;
+	width: 100%;
+	border-radius: 10px;
 	&_poster {
 		max-width: 60%;
 		max-height: 300px;
-		overflow: hidden;
-		img {
-			width: 100%;
-			object-fit: contain;
-		}
+		object-fit: contain;
 	}
 	&_description {
 		position: relative;
@@ -30,15 +27,26 @@
 			line-height: 20px;
 		}
 	}
-	&:hover {
-		.arrow-right {
-			filter: drop-shadow(0px 0px 10px rgb(0, 0, 0));
-		}
-	}
 }
 .arrow-right {
 	position: absolute;
 	display: block;
 	top: 85%;
 	left: 90%;
+	cursor: pointer;
+	&:hover {
+		filter: drop-shadow(0px 0px 10px rgb(0, 0, 0));
+	}
+}
+@media (max-width: 900px) {
+	.home_title {
+		flex-direction: column;
+		&_poster {
+			min-width: 100%;
+			object-fit: cover;
+		}
+		&_description {
+			padding: 20px 0;
+		}
+	}
 }
