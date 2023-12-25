@@ -1,0 +1,42 @@
+@import "../../../styles_global/fonts";
+.categorie {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	margin-top: 30px;
+	&_title {
+		font-family: $TITLE_FONT;
+		font-weight: bold;
+		font-size: 30px;
+	}
+	&_recipes {
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		&_recipe {
+			width: 200px;
+			min-height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			gap: 10px;
+			img {
+				width: 100%;
+				min-height: 200px;
+				object-fit: cover;
+				border-radius: 5px;
+			}
+			&_description {
+				width: 100%;
+				height: 100%;
+				svg {
+					width: 15px;
+				}
+				&_name {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}

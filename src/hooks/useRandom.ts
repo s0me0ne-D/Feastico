@@ -1,17 +1,20 @@
-import { useState } from "react";
-import { IRecipes } from "../interface/recipes";
+import { useEffect, useState } from "react";
 
-export const useRandom = ({ recipes }: { recipes: IRecipes }) => {
-	const randomRecipes = [];
-	const [count, setCount] = useState(0);
-	const [index, setIndex] = useState<number[]>([]);
-	const getRandomIndex = () => {
-		return Math.floor(Math.random() * 40);
-	};
-	while (count < 3) {
-		let randomIndex = getRandomIndex();
-		if (!index.find((index) => index !== randomIndex)) {
-			setIndex((prev) => [...prev, randomIndex]);
-		} else return;
-	}
+export const useRandom = (recipes: any) => {
+	const [randomRecipes, setRandomRecipes] = useState<any[]>([]);
+	useEffect(() => {
+		const getRandomRecipes = () => {
+			const randomIndexes: number[] = [];
+			while (randomIndexes.length < 5) {
+				const randomIndex = Math.floor(Math.random() * recipes.results.length);
+				if (!randomIndexes.includes(randomIndex)) {
+					randomIndexes.push(randomIndex);
+				}
+			}
+			const selectedRecipes = randomIndexes.map((index) => recipes.results[index]);
+			setRandomRecipes(selectedRecipes);
+		};
+		getRandomRecipes();
+	}, [recipes]);
+	return randomRecipes;
 };
