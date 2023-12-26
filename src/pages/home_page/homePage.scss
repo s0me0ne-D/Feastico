@@ -1,4 +1,7 @@
 .home_page {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
 	flex: 1 0 auto;
 	margin: 30px 175px;
 }

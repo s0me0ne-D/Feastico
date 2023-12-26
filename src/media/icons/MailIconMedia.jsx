@@ -1,4 +1,4 @@
-export const MailIcon = () => (
+export const MailIconMedia = () => (
 	<a href={"mailto:zdybeldenys@gmail.com?subject=Mail from Feastico"}>
 		<svg height="20px" width="20px" viewBox="0 0 216 216" fill="white">
 			<path

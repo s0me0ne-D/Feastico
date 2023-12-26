@@ -15,7 +15,7 @@
 			width: 50%;
 			&_slogan {
 				max-width: 80%;
-				color: $SHADOW_TEXT_COLOR;
+				color: $SHADOW_COLOR;
 				word-spacing: 1px;
 				line-height: 13px;
 			}
@@ -34,7 +34,7 @@
 		span {
 			display: flex;
 			align-items: center;
-			color: $SHADOW_TEXT_COLOR;
+			color: $SHADOW_COLOR;
 		}
 	}
 	&_logo {
@@ -47,7 +47,7 @@
 		svg {
 			width: 20px;
 			path {
-				fill: $SHADOW_TEXT_COLOR;
+				fill: $SHADOW_COLOR;
 				opacity: 0.6;
 			}
 			&:hover {
@@ -63,9 +63,9 @@
 	flex-direction: column;
 	gap: 10px;
 	a {
-		color: $SHADOW_TEXT_COLOR;
+		color: $SHADOW_COLOR;
 		&:hover {
-			color: $SHADOW_TEXT_COLOR_HOVER;
+			color: $SHADOW_COLOR_HOVER;
 		}
 	}
 }

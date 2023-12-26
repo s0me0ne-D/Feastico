@@ -1,7 +1,8 @@
 import React from "react";
-import { MailIcon } from "../../../../../media/icons/MailIcon";
+import { MailIconMedia } from "../../../../../media/icons/MailIconMedia";
 import { IUser } from "../../../../../interface/user_interfsce";
 import { isUserRegistered } from "../../../../../utils/isUserRegistered";
+import { MailIconForm } from "../../../../../media/icons/MailIconForm";
 
 export const Email = ({
 	changeUserEmail,
@@ -19,7 +20,7 @@ export const Email = ({
 			className="email user_data"
 			style={{ borderBottom: `1px solid ${isRegistered ? "red" : "#e8e8e8"}` }}
 		>
-			<MailIcon /> &nbsp;
+			<MailIconForm /> &nbsp;
 			<input
 				type="email"
 				placeholder="Email"

@@ -10,7 +10,6 @@ export const Main = () => {
 	return (
 		// isAuthorized ?
 		<RouterProvider router={router} />
-		// :
-		// <SplashPage />
+		// : <SplashPage />
 	);
 };
