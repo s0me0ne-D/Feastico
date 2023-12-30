@@ -1,30 +1,20 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { IUser } from "../interface/user_interfsce";
+import { getAutorizedUser } from "../utils/getAuthorizedUser";
+import { setAuthorizedUser } from "../utils/setAuthorizedUser";
 
-interface IInitialState {
-	isAuthorized: boolean;
-	userData: IUser;
-}
-
-const initialState: IInitialState = {
-	isAuthorized: false,
-	userData: {
-		name: "",
-		email: "",
-		favourites: [],
-		password: "",
-	},
-};
-
+const initialState: IUser = getAutorizedUser();
 export const user = createSlice({
 	name: "user",
 	initialState,
 	reducers: {
-		signUp: (state, action: PayloadAction<IUser>) => {
-			state.isAuthorized = true;
-			state.userData = action.payload;
+		signIn: (state, action: PayloadAction<IUser>) => {
+			setAuthorizedUser(action.payload);
+		},
+		signOut: (state, action: PayloadAction<{ isAuthorized: boolean }>) => {
+			state.isAuthorized = action.payload.isAuthorized;
 		},
 	},
 });
 export const userReducer = user.reducer;
-export const { signUp } = user.actions;
+export const { signIn, signOut } = user.actions;

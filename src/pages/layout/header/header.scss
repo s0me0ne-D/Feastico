@@ -36,6 +36,15 @@
 		height: 30px;
 		display: flex;
 		align-items: center;
+		z-index: 999;
+	}
+	&_account {
+		display: flex;
+		align-items: center;
+		z-index: 998;
+		img {
+			cursor: pointer;
+		}
 	}
 }
 .section {

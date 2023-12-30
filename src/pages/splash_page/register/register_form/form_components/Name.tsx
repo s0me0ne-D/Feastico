@@ -16,8 +16,8 @@ export const Name = ({
 			<input
 				type="text"
 				placeholder="Name"
-				onBlur={(event) => {
-					event.target.value !== "" && changeName({ ...userData, name: event.target.value });
+				onChange={(event) => {
+					changeName({ ...userData, name: event.target.value });
 				}}
 				required={true}
 			/>

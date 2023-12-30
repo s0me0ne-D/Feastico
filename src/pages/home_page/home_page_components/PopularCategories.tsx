@@ -20,7 +20,11 @@ export const PopularCategories = () => {
 			<span className="home_page_popular_title">Popular Categories</span>
 			<div className="home_page_popular_categories">
 				{popularCategories.map((categorie) => (
-					<NavLink to={"/"} className="home_page_popular_categories_categorie">
+					<NavLink
+						to={"/"}
+						key={categorie.title}
+						className="home_page_popular_categories_categorie"
+					>
 						<img src={categorie.data.results[3].thumbnail_url} alt={categorie.title} />
 						<span className="home_page_popular_categories_categorie_title">{categorie.title}</span>
 					</NavLink>

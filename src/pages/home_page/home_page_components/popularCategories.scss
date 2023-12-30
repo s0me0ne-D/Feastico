@@ -11,18 +11,17 @@
 	}
 	&_categories {
 		width: 100%;
-		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
-
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+		gap: 20px;
 		&_categorie {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			gap: 10px;
 			img {
-				width: 150px;
-				height: 150px;
+				max-width: 130px;
+				height: 130px;
 				object-fit: cover;
 				border-radius: 50%;
 				box-shadow: 0 0 10px black;

@@ -12,13 +12,13 @@ export const SignUpPage = ({
 	changePage: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
 	const [userData, setUserData] = useState<IUser>({
+		isAuthorized: false,
 		email: "",
 		password: "",
 		name: "",
 		favourites: [],
 	});
 	const [isRegistered, setIsRegistered] = useState(false);
-
 	return (
 		<>
 			<form

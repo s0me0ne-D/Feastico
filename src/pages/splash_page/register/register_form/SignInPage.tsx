@@ -4,14 +4,15 @@ import { Password } from "./form_components/Password";
 import { Email } from "./form_components/Email";
 import { authentication } from "../../../../utils/authentication";
 import { useDispatch } from "react-redux";
-import { signUp } from "../../../../redux/userSlice";
+import { signIn } from "../../../../redux/userSlice";
 
-export const LoginPage = ({
+export const SignInPage = ({
 	changePage,
 }: {
 	changePage: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
 	const [userData, setUserData] = useState<IUser>({
+		isAuthorized: true,
 		email: "",
 		password: "",
 		name: "",
@@ -21,14 +22,17 @@ export const LoginPage = ({
 	const [errorMessage, setErrorMessage] = useState(false);
 	const submit = (event: React.FormEvent<HTMLFormElement>) => {
 		const authenticatedUser = authentication(userData);
-		authenticatedUser ? dispatch(signUp(authenticatedUser)) : setErrorMessage(true);
-		event.preventDefault();
-		event.stopPropagation();
+		if (authenticatedUser) {
+			dispatch(signIn({ ...authenticatedUser, isAuthorized: userData.isAuthorized }));
+		} else {
+			setErrorMessage(true);
+			event.preventDefault();
+			event.stopPropagation();
+		}
 	};
-	console.log(userData);
 	return (
 		<>
-			<form className="register_form" onSubmit={submit}>
+			<form className="register_form" onSubmit={(event) => submit(event)}>
 				<div className="register_title">LOGIN</div>
 				<Email changeUserEmail={setUserData} userData={userData} />
 				<Password userData={userData} changeUserPassword={setUserData} />

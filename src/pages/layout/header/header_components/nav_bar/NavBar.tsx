@@ -19,19 +19,11 @@ export const NavBar = ({ onActive }: { onActive: boolean }) => {
 						onMouseEnter={() => {
 							setShowCategories(section);
 						}}
+						onMouseLeave={() => setShowCategories("")}
 					>
-						<span
-							className="section_title"
-							onMouseEnter={() => {
-								setShowCategories(section);
-							}}
-						>
-							{section}
-						</span>
+						<span className="section_title">{section}</span>
 						<ArrowDown />
-						{showCategories === section && (
-							<Categories categorieHeadline={section} setShowCategories={setShowCategories} />
-						)}
+						{showCategories === section && <Categories categorieHeadline={section} />}
 					</div>
 				))}
 			</nav>

@@ -1,5 +1,4 @@
 import React from "react";
-import { MailIconMedia } from "../../../../../media/icons/MailIconMedia";
 import { IUser } from "../../../../../interface/user_interfsce";
 import { isUserRegistered } from "../../../../../utils/isUserRegistered";
 import { MailIconForm } from "../../../../../media/icons/MailIconForm";
@@ -26,10 +25,9 @@ export const Email = ({
 				placeholder="Email"
 				onChange={(event) => {
 					if (setIsRegistered) {
-						console.log(isUserRegistered(event.target.value));
 						isUserRegistered(event.target.value) ? setIsRegistered(true) : setIsRegistered(false);
 					}
-					if (userData && event.target.value !== "") {
+					if (userData) {
 						changeUserEmail({ ...userData, email: event.target.value });
 					}
 				}}

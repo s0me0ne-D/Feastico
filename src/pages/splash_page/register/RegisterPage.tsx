@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { LoginPage } from "./register_form/LoginPage";
+import { SignInPage } from "./register_form/SignInPage";
 import "./registerPage.scss";
 import { SignUpPage } from "./register_form/SignUpPage";
 
@@ -9,7 +9,7 @@ export const RegisterPage = () => {
 		<div className="register">
 			<div className="register_container">
 				{registered ? (
-					<LoginPage changePage={setRegistered} />
+					<SignInPage changePage={setRegistered} />
 				) : (
 					<SignUpPage changePage={setRegistered} />
 				)}

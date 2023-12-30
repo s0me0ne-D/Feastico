@@ -1,7 +1,6 @@
 import React from "react";
-import { RatingComponent } from "../../../components/RatingComponent";
 import "./recipes.scss";
-import { MoreInfo } from "../../../components/more_info/MoreInfo";
+import { Recipe } from "./Recipe";
 
 export const Recipes = ({ recipes, title }: { recipes: any; title: string }) => {
 	return (
@@ -9,14 +8,7 @@ export const Recipes = ({ recipes, title }: { recipes: any; title: string }) => 
 			<span className="categorie_title">{title}</span>
 			<div className="categorie_recipes">
 				{recipes.map((recipe: any) => (
-					<div className="categorie_recipes_recipe" key={recipe.canonical_id}>
-						<MoreInfo recipe={recipe} />
-						<img src={recipe.thumbnail_url} alt={recipe.name} />
-						<div className="categorie_recipes_recipe_description">
-							<RatingComponent value={recipe.user_ratings.score} />
-							<span className="categorie_recipes_recipe_description_name">{recipe.name}</span>
-						</div>
-					</div>
+					<Recipe recipe={recipe} key={recipe.id} />
 				))}
 			</div>
 		</div>
