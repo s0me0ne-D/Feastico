@@ -1,0 +1,25 @@
+@import "../../../styles_global//colors";
+.recipe_rating {
+	display: flex;
+	gap: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid $SHADOW_COLOR;
+	&_users {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		color: $SHADOW_COLOR;
+
+		&_count {
+			font-size: 12px;
+		}
+		.MuiRating-root {
+			font-size: 15px;
+		}
+	}
+	.shadow-color {
+		path {
+			fill: $SHADOW_COLOR;
+		}
+	}
+}

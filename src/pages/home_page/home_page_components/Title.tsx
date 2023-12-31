@@ -3,6 +3,7 @@ import { desserts } from "../../../store/meals_recipes/desserts";
 import "./title.scss";
 import { RatingComponent } from "../../../components/RatingComponent";
 import ArrowRightIcon from "../../../media/icons/ArrowRightIcon";
+import { NavLink } from "react-router-dom";
 export const Title = () => {
 	const recipe = desserts.results[3];
 	return (
@@ -12,7 +13,9 @@ export const Title = () => {
 				<span className="home_title_description_headline">{recipe.name}</span>
 				<span className="home_title_description_text">{recipe.description}</span>
 				<RatingComponent value={recipe.user_ratings.score} />
-				<ArrowRightIcon />
+				<NavLink to={"/recipe"}>
+					<ArrowRightIcon />
+				</NavLink>
 			</div>
 		</div>
 	);

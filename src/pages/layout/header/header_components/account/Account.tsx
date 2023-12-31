@@ -9,6 +9,7 @@ export const Account = () => {
 			className="header_account"
 			onMouseEnter={() => setShowMenu(true)}
 			onMouseLeave={() => setShowMenu(false)}
+			onClick={() => setShowMenu((prev) => !prev)}
 		>
 			<img src={AccountLogo} alt="account" className="header_account-logo" />
 			{showMenu && <AccountMenu />}

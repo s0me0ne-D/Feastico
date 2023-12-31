@@ -13,7 +13,6 @@ export const Main = () => {
 		if (userData !== notAuthorizedUser) {
 			setAuthorizedUser(userData);
 		}
-		console.log(userData);
 	}, [userData]);
 	return userData.isAuthorized ? <RouterProvider router={router} /> : <SplashPage />;
 };

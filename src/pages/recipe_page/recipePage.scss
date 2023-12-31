@@ -1,0 +1,61 @@
+@import "../../styles_global/fonts", "../../styles_global//colors", "../../styles_global/animations";
+
+.recipe {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	&_add {
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+	}
+	&_name {
+		font-family: $TITLE_FONT;
+		font-weight: bold;
+		font-size: 30px;
+	}
+	&_description {
+		line-height: 20px;
+	}
+	&_serving {
+		display: flex;
+		gap: 10px;
+		&_block {
+			display: flex;
+			flex-direction: column;
+			gap: 3px;
+			padding: 0 7px;
+			border-left: 1px solid $SHADOW_COLOR;
+			&_title {
+				font-size: 10px;
+				color: $SHADOW_COLOR;
+			}
+			&_context {
+				font-size: 12px;
+			}
+		}
+	}
+	&_nutrition {
+		width: 300px;
+		padding: 15px;
+		background-color: #e8e8e8;
+		border-radius: 10px;
+		&_title {
+			font-family: $TITLE_FONT;
+			font-size: 30px;
+		}
+		ul {
+			margin-top: 10px;
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+			li {
+				width: 100%;
+				padding: 5px 0;
+				display: flex;
+				justify-content: space-between;
+				border-bottom: 1px solid $SHADOW_COLOR;
+			}
+		}
+	}
+}

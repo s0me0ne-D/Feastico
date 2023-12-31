@@ -14,20 +14,22 @@ export const AccountMenu = () => {
 	const dispatch = useDispatch();
 	return (
 		<div className="account_menu">
-			<span>Hy, {name}</span>
-			<div className="account_menu_links">
-				<NavLink to={"/"}>
-					<ProfileIcon />
-					Your profile
-				</NavLink>
-				<NavLink to={"/"}>
-					<FavoritesIcon />
-					Favorites recipes
-				</NavLink>
+			<div className="account_menu_wrapper">
+				<span>Hy, {name}</span>
+				<div className="account_menu_links">
+					<NavLink to={"/"}>
+						<ProfileIcon />
+						Your profile
+					</NavLink>
+					<NavLink to={"/"}>
+						<FavoritesIcon />
+						Favorites recipes
+					</NavLink>
+				</div>
+				<button onClick={() => dispatch(signOut({ isAuthorized: false }))}>
+					<SignOutIcon /> Sing out
+				</button>
 			</div>
-			<button onClick={() => dispatch(signOut({ isAuthorized: false }))}>
-				<SignOutIcon /> Sing out
-			</button>
 		</div>
 	);
 };

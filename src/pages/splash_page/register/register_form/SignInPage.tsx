@@ -21,6 +21,7 @@ export const SignInPage = ({
 	const dispatch = useDispatch();
 	const [errorMessage, setErrorMessage] = useState(false);
 	const submit = (event: React.FormEvent<HTMLFormElement>) => {
+		console.log("submit");
 		const authenticatedUser = authentication(userData);
 		if (authenticatedUser) {
 			dispatch(signIn({ ...authenticatedUser, isAuthorized: userData.isAuthorized }));

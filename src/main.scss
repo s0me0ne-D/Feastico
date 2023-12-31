@@ -1,1 +1,15 @@
 @import url("./styles_global/_reset.scss");
+
+.main-margin {
+	margin: 30px 175px;
+}
+@media (max-width: 1150px) {
+	.main-margin {
+		margin: 30px 50px;
+	}
+}
+@media (max-width: 500px) {
+	.main-margin {
+		margin: 30px 10px;
+	}
+}
