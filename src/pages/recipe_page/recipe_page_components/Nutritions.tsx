@@ -12,7 +12,7 @@ interface INutrition {
 export const Nutritions = ({ nutrition }: { nutrition: INutrition }) => {
 	return (
 		<div className="recipe_nutrition">
-			<span className="recipe_nutrition_title">Nutrition</span>
+			<h2>Nutrition</h2>
 			<ul>
 				<li>
 					<span>Calories</span>

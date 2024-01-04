@@ -1,0 +1,59 @@
+@import "../../../../styles_global/fonts", "../../../../styles_global/colors";
+.recipe_ingredients {
+	&_section {
+		margin-top: 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		&_title {
+			font-weight: bold;
+		}
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+		&_component {
+			display: flex;
+			span {
+				margin-left: 5px;
+			}
+		}
+	}
+	.checked-component {
+		text-decoration: line-through;
+		color: $SHADOW_COLOR;
+	}
+	input {
+		appearance: none;
+		background-color: #fff;
+		margin: 0;
+		font: inherit;
+		color: currentColor;
+		width: 15px;
+		height: 15px;
+		border: 1.5px solid currentColor;
+		border-radius: 50%;
+		transform: translateY(-1.2px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&::before {
+			content: "";
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			transform: scale(0);
+			transition: 120ms transform ease-in-out;
+			box-shadow: inset 10px 10px $BUTTON_COLOR;
+			transform-origin: bottom left;
+			clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+		}
+		&:checked {
+			border: 1.5px solid $BUTTON_COLOR;
+			&:before {
+				transform: scale(1);
+			}
+		}
+	}
+}

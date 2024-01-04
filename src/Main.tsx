@@ -14,5 +14,6 @@ export const Main = () => {
 			setAuthorizedUser(userData);
 		}
 	}, [userData]);
+	console.log(userData);
 	return userData.isAuthorized ? <RouterProvider router={router} /> : <SplashPage />;
 };

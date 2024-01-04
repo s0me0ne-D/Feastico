@@ -1,0 +1,35 @@
+@import "../../../styles_global/colors";
+.recipe_instructions {
+	grid-column: 2;
+	grid-row-start: 1;
+	grid-row-end: 3;
+	ul {
+		margin-top: 20px;
+	}
+	&_block {
+		display: flex;
+		gap: 5px;
+		margin-top: 10px;
+		&_position {
+			min-width: 20px;
+			height: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: $BUTTON_COLOR;
+			border-radius: 50%;
+			color: white;
+		}
+		&_display-text {
+			line-height: 20px;
+		}
+	}
+}
+@media (max-width: 700px) {
+	.recipe {
+		&_instructions {
+			grid-column: 1;
+			grid-row-start: 2;
+		}
+	}
+}
