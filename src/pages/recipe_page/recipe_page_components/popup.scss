@@ -1,0 +1,30 @@
+@import "../../../styles_global/animations", "../../../styles_global/colors";
+.recipe_ingredients_popup {
+	position: absolute;
+	z-index: 999;
+	left: 50%;
+	transform: translate(-50%, 100%);
+	background-color: white;
+	border: 1px solid $BORDER_COLOR;
+	border-radius: 5px;
+	width: 350px;
+	animation: $VISION_ANIMATION;
+	&_close {
+		width: 100%;
+		display: flex;
+		justify-content: end;
+		cursor: pointer;
+	}
+	&_message {
+		display: grid;
+		place-items: center;
+		gap: 5px;
+		padding-bottom: 20px;
+		a {
+			color: $BUTTON_COLOR;
+			&:hover {
+				color: $BUTTON_COLOR_HOVER;
+			}
+		}
+	}
+}

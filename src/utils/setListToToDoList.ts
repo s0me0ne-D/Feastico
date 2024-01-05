@@ -1,3 +1,5 @@
+import { IAttachedShoppingList } from "../pages/recipe_page/recipe_page_components/ingredients/Ingredients";
+
 export interface IDirectory {
 	id: string;
 	title: string;
@@ -17,9 +19,11 @@ const TO_DO_LIST_KEY = "ToDoList";
 export const setListToToDoList = ({
 	shoppingList,
 	dishName,
+	setAttachedShoppingList,
 }: {
 	shoppingList: string[];
 	dishName: string;
+	setAttachedShoppingList: React.Dispatch<React.SetStateAction<IAttachedShoppingList>>;
 }) => {
 	const getItem = () => {
 		const storage = localStorage.getItem(TO_DO_LIST_KEY);
@@ -37,14 +41,18 @@ export const setListToToDoList = ({
 		}
 	};
 	const isList = findNewTaskIndex();
-	console.log(isList);
 	if (directories) {
 		if (isList === -1) {
 			directories.push(newTask);
 			localStorage.setItem(TO_DO_LIST_KEY, JSON.stringify(directories));
-		} else return;
+			setAttachedShoppingList({ attached: true, error: false });
+		} else {
+			setAttachedShoppingList({ attached: false, error: true });
+			return;
+		}
 	} else {
 		const newToDoList = [newTask];
 		localStorage.setItem(TO_DO_LIST_KEY, JSON.stringify(newToDoList));
+		setAttachedShoppingList({ attached: true, error: false });
 	}
 };

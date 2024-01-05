@@ -1,14 +1,18 @@
 import React from "react";
+import { IAttachedShoppingList } from "../../pages/recipe_page/recipe_page_components/ingredients/Ingredients";
 
 export const CloseIcon = ({
 	onClick,
+	setShowPopup,
 }: {
-	onClick: React.Dispatch<React.SetStateAction<boolean>>;
+	onClick?: React.Dispatch<React.SetStateAction<boolean>>;
+	setShowPopup?: React.Dispatch<React.SetStateAction<IAttachedShoppingList>>;
 }) => {
 	return (
 		<svg
 			onClick={(event) => {
-				onClick(false);
+				onClick && onClick(false);
+				setShowPopup && setShowPopup({ attached: false, error: false });
 				event.preventDefault();
 				event.stopPropagation();
 			}}

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 export const Bookmark = ({ isFavorite, onClick }: { isFavorite: boolean; onClick: () => void }) => {
 	const [mouseOn, setMouseOn] = useState(false);
-	console.log(isFavorite);
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"

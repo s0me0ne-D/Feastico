@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./ingredients.scss";
 import { IngredientsComponent } from "./IngredientsComponent";
 import { setListToToDoList } from "../../../../utils/setListToToDoList";
+import { Popup } from "../Popup";
 type Sections = ISection[];
 
 interface ISection {
@@ -37,8 +38,20 @@ interface IUnit {
 	display_plural: string;
 	display_singular: string;
 }
+export interface IAttachedShoppingList {
+	attached: boolean;
+	error: boolean;
+}
 export const Ingredients = ({ sections, dishName }: { sections: Sections; dishName: string }) => {
 	const [shoppingList, setShoppingList] = useState<string[]>([]);
+	const [attachedShoppingList, setAttachedShoppingList] = useState<IAttachedShoppingList>({
+		attached: false,
+		error: false,
+	});
+	const [scrolledPixels, setScrollPixels] = useState(0);
+	useEffect(() => {
+		setScrollPixels(Math.round(window.scrollY));
+	}, [attachedShoppingList]);
 	useEffect(() => {
 		sections.forEach((section) => {
 			section.components.forEach((component) => {
@@ -74,11 +87,18 @@ export const Ingredients = ({ sections, dishName }: { sections: Sections; dishNa
 			))}
 			<button
 				onClick={() => {
-					setListToToDoList({ shoppingList, dishName });
+					setListToToDoList({ shoppingList, dishName, setAttachedShoppingList });
 				}}
 			>
 				Add to Shopping List
 			</button>
+			{attachedShoppingList.attached || attachedShoppingList.error ? (
+				<Popup
+					isError={attachedShoppingList.error}
+					setShowPopup={setAttachedShoppingList}
+					scrolledPixels={scrolledPixels}
+				/>
+			) : null}
 		</div>
 	);
 };
