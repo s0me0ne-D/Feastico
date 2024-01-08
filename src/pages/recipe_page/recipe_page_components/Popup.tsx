@@ -26,6 +26,9 @@ export const Popup = ({
 					<div className="recipe_ingredients_popup_message">
 						<AttentionAnim />
 						<span>The list already exists</span>
+						<span>
+							Follow the link to view <a href="#">ToDoList</a>
+						</span>
 					</div>
 				</>
 			) : (

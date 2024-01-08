@@ -53,6 +53,9 @@ export const Ingredients = ({ sections, dishName }: { sections: Sections; dishNa
 		setScrollPixels(Math.round(window.scrollY));
 	}, [attachedShoppingList]);
 	useEffect(() => {
+		if (shoppingList.length > 0) {
+			setShoppingList([]);
+		}
 		sections.forEach((section) => {
 			section.components.forEach((component) => {
 				if (!shoppingList.includes(component.raw_text)) {
@@ -62,7 +65,9 @@ export const Ingredients = ({ sections, dishName }: { sections: Sections; dishNa
 		});
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [sections]);
-
+	useEffect(() => {
+		console.log(shoppingList);
+	}, [shoppingList]);
 	return (
 		<div className="recipe_ingredients">
 			<h2>Ingredients</h2>

@@ -1,0 +1,49 @@
+@import "../../../styles_global/colors";
+.profile_form {
+	display: grid;
+	grid-template-columns: repeat(2, 300px);
+	gap: 20px;
+	label {
+		color: $SHADOW_COLOR;
+	}
+	&_field {
+		display: flex;
+		align-items: center;
+		border-bottom: 1px solid black;
+		opacity: 0.5;
+		input {
+			width: 100%;
+			padding: 10px 5px;
+		}
+		svg {
+			path {
+				fill: black;
+			}
+		}
+	}
+	.active-field {
+		opacity: 1;
+	}
+	&_btn-block {
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+		grid-column: 2;
+		button {
+			background-color: transparent;
+			color: $BUTTON_COLOR;
+			&:hover {
+				color: $BUTTON_COLOR_HOVER;
+			}
+		}
+	}
+}
+@media (max-width: 720px) {
+	.profile_form {
+		&_btn-block {
+			grid-column: 1;
+		}
+		grid-template-columns: 1fr;
+		margin-bottom: 30px;
+	}
+}

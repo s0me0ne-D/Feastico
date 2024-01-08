@@ -10,7 +10,7 @@ import { Favourite } from "./recipe_page_components/Favourite";
 
 export const RecipePage = () => {
 	const [recipe, setRecipe] = useState<any | null>(null);
-	const currentRecipe = cookies.results[4];
+	const currentRecipe = cookies.results[7];
 	useEffect(() => {
 		setRecipe(currentRecipe);
 	}, [currentRecipe]);

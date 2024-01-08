@@ -1,0 +1,16 @@
+@import "../styles_global/animations";
+.sign-out-button {
+	display: flex;
+	align-items: center;
+	padding: 3px;
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 3px;
+	color: black;
+	font-size: 11px;
+	opacity: 0.6;
+	transition: $BUTTON_TRANSITION;
+	&:hover {
+		opacity: 1;
+	}
+}

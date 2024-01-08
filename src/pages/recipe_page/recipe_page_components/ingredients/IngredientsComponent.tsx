@@ -25,8 +25,11 @@ export const IngredientsComponent = ({
 	};
 
 	return (
-		<li className="recipe_ingredients_section_component">
-			<input type="checkbox" onChange={() => checkedHandler()} />
+		<li
+			className="recipe_ingredients_section_component"
+			onClick={() => setChecked((prev) => !prev)}
+		>
+			<input type="checkbox" checked={checked} onChange={() => checkedHandler()} />
 			<span className={checked ? "checked-component" : ""}>{rawText}</span>
 		</li>
 	);

@@ -12,7 +12,7 @@ export const HomePage = () => {
 	const randomChristmas = useRandom(christmas);
 
 	return (
-		<div className="home_page">
+		<div className="home_page main-margin">
 			<Title />
 			<Recipes recipes={randomDesserts} title="Sweet Tooth" />
 			<Recipes recipes={randomChristmas} title="Christmas Ideas" />

@@ -6,6 +6,7 @@ import "./header.scss";
 import { BurgerMenu } from "./header_components/BurgerMenu";
 import { useOutsideClick } from "../../../hooks/useOutsideClick";
 import { Account } from "./header_components/account/Account";
+import { NavLink } from "react-router-dom";
 
 export const Header = () => {
 	const [active, setActive] = useState(false);
@@ -14,7 +15,9 @@ export const Header = () => {
 
 	return (
 		<div className="header">
-			<Logo className="header-logo" />
+			<NavLink to={"/"}>
+				<Logo className="header-logo" />
+			</NavLink>
 			<div className="menu" ref={menuRef}>
 				<BurgerMenu active={active} onClick={setActive} />
 				<NavBar onActive={active} />
