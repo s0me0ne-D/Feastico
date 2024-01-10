@@ -23,6 +23,7 @@ export const Email = ({
 			<input
 				type="email"
 				placeholder="Email"
+				value={userData?.email}
 				onChange={(event) => {
 					if (setIsRegistered) {
 						isUserRegistered(event.target.value) ? setIsRegistered(true) : setIsRegistered(false);

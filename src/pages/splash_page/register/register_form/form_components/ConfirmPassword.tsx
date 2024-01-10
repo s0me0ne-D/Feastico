@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { PasswordIcon } from "../../../../../media/icons/PasswordIcon";
 import { IUser } from "../../../../../interface/user_interfsce";
 
 export const ConfirmPassword = ({ userData }: { userData: IUser }) => {
 	const [confirmPassword, setConfirmPassword] = useState("");
 	const [errorPassword, setErrorPassword] = useState(false);
+	useEffect(() => {
+		userData.password === "" && setConfirmPassword("");
+	}, [userData]);
 	return (
 		<div
 			className="user_data"

@@ -16,6 +16,7 @@ export const Name = ({
 			<input
 				type="text"
 				placeholder="Name"
+				value={userData.name}
 				onChange={(event) => {
 					changeName({ ...userData, name: event.target.value });
 				}}

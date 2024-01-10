@@ -5,29 +5,27 @@ import { Email } from "./form_components/Email";
 import { authentication } from "../../../../utils/authentication";
 import { useDispatch } from "react-redux";
 import { signIn } from "../../../../redux/userSlice";
+import { useSelector } from "react-redux";
+import { RootStore } from "../../../../redux/store";
 
 export const SignInPage = ({
 	changePage,
 }: {
 	changePage: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-	const [userData, setUserData] = useState<IUser>({
-		isAuthorized: true,
-		email: "",
-		password: "",
-		name: "",
-		favourites: [],
-	});
-	const dispatch = useDispatch();
+	const initialUser = useSelector((state: RootStore) => state.userReducer);
+	const [userData, setUserData] = useState<IUser>({ ...initialUser, isAuthorized: true });
+	console.log(userData);
 	const [errorMessage, setErrorMessage] = useState(false);
+	const dispatch = useDispatch();
 	const submit = (event: React.FormEvent<HTMLFormElement>) => {
 		const authenticatedUser = authentication(userData);
-		if (authenticatedUser) {
-			dispatch(signIn({ ...authenticatedUser, isAuthorized: userData.isAuthorized }));
-		} else {
+		if (!authenticatedUser) {
 			setErrorMessage(true);
 			event.preventDefault();
 			event.stopPropagation();
+		} else {
+			dispatch(signIn({ ...authenticatedUser, isAuthorized: true }));
 		}
 	};
 	return (

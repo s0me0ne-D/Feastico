@@ -10,21 +10,8 @@ h2 {
 	flex-direction: column;
 	&_title {
 		width: 100%;
-		display: flex;
-		justify-content: space-between;
 		height: 70px;
 		border-bottom: 1px solid $SHADOW_COLOR;
-		button {
-			height: fit-content;
-			padding: 10px 20px;
-			background-color: $BUTTON_COLOR;
-			color: white;
-			border-radius: 5px;
-			transition: $BUTTON_TRANSITION;
-			&:hover {
-				background-color: $BUTTON_COLOR_HOVER;
-			}
-		}
 	}
 
 	&_logo {
@@ -41,6 +28,7 @@ h2 {
 		display: flex;
 		height: 100%;
 		max-width: 620px;
+		margin-top: 20px;
 		align-items: flex-end;
 		justify-content: space-between;
 		flex: 1 0 auto;

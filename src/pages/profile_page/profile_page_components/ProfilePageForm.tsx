@@ -7,24 +7,47 @@ import { ConfirmPasswordProfileForm } from "./ConfirmPasswordProfileForm";
 import { IUser } from "../../../interface/user_interfsce";
 import { useSelector } from "react-redux";
 import { RootStore } from "../../../redux/store";
+import { useDispatch } from "react-redux";
+import { editUserData } from "../../../redux/userSlice";
 
-export const ProfilePageForm = () => {
+export type ICurrentUserData = Omit<IUser, "favourites" | "isAuthorized" | "userId">;
+
+export const ProfilePageForm = ({
+	errorPassword,
+	setErrorPassword,
+}: {
+	errorPassword: boolean;
+	setErrorPassword: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
 	const { email, name, password } = useSelector((user: RootStore) => user.userReducer);
-	const [currentUserData, setCurrentUserData] = useState<
-		Omit<IUser, "favourites" | "isAuthorized">
-	>({ email, name, password });
-	const [confirmPassword, setConfirmPassword] = useState<string>(password);
+	const [currentUserData, setCurrentUserData] = useState<ICurrentUserData>({
+		email,
+		name,
+		password,
+	});
+	const dispatch = useDispatch();
 	return (
-		<form className="profile_form">
-			<NameProfileForm value={currentUserData.name} />
-			<MailProfileForm value={currentUserData.email} />
-			<PasswordProfileForm value={currentUserData.password} />
+		<form
+			className="profile_form"
+			onSubmit={(event) => {
+				if (!errorPassword) {
+					dispatch(editUserData(currentUserData));
+				} else {
+					event.preventDefault();
+					event.stopPropagation();
+				}
+			}}
+		>
+			<NameProfileForm value={currentUserData.name} setData={setCurrentUserData} />
+			<MailProfileForm value={currentUserData.email} setData={setCurrentUserData} />
+			<PasswordProfileForm value={currentUserData.password} setData={setCurrentUserData} />
 			<ConfirmPasswordProfileForm
 				currentPassword={currentUserData.password}
-				value={confirmPassword}
+				setErrorPassword={setErrorPassword}
+				errorPassword={errorPassword}
 			/>
-			<div className="profile_form_btn-block">
-				<button type="submit">Change</button>
+			<div className="profile_form_submit-block">
+				<button type="submit">SAVE</button>
 			</div>
 		</form>
 	);

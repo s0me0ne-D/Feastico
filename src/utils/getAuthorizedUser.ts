@@ -3,6 +3,7 @@ import { getLocalStorage } from "./getLocalStorage";
 
 export const notAuthorizedUser: IUser = {
 	isAuthorized: false,
+	userId: 0,
 	name: "",
 	email: "",
 	favourites: [],
@@ -10,13 +11,6 @@ export const notAuthorizedUser: IUser = {
 };
 
 export const getAutorizedUser = () => {
-	// const user: IUser = {
-	// 	isAuthorized: false,
-	// 	name: "",
-	// 	email: "",
-	// 	favourites: [],
-	// 	password: "",
-	// };
 	const users: IUser[] | null = getLocalStorage();
 	const authorizedUser = users?.find((user) => user.isAuthorized === true);
 	if (authorizedUser !== undefined) {

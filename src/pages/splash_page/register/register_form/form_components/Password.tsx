@@ -17,9 +17,9 @@ export const Password = ({
 				type="password"
 				placeholder="Password"
 				required={true}
+				value={userData.password}
 				onChange={(event) => {
-					event.target.value !== "" &&
-						changeUserPassword({ ...userData, password: event.target.value });
+					changeUserPassword({ ...userData, password: event.target.value });
 				}}
 			/>
 		</div>

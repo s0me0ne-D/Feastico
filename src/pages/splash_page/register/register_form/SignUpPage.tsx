@@ -1,24 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Email } from "./form_components/Email";
 import { Password } from "./form_components/Password";
 import { Name } from "./form_components/Name";
 import { ConfirmPassword } from "./form_components/ConfirmPassword";
 import { IUser } from "../../../../interface/user_interfsce";
 import { setLocalStorage } from "../../../../utils/setLocalStorage";
+import { notAuthorizedUser } from "../../../../utils/getAuthorizedUser";
 
 export const SignUpPage = ({
 	changePage,
 }: {
 	changePage: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-	const [userData, setUserData] = useState<IUser>({
-		isAuthorized: false,
-		email: "",
-		password: "",
-		name: "",
-		favourites: [],
-	});
+	const [userData, setUserData] = useState<IUser>(notAuthorizedUser);
 	const [isRegistered, setIsRegistered] = useState(false);
+	const getRandomId = () => Math.floor(Math.random() * 10000);
+	useEffect(() => {
+		setUserData({ ...userData, userId: getRandomId() });
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 	return (
 		<>
 			<form
@@ -26,6 +26,7 @@ export const SignUpPage = ({
 				onSubmit={(event) => {
 					if (!isRegistered) {
 						setLocalStorage(userData);
+						setUserData(notAuthorizedUser);
 					} else {
 						event.stopPropagation();
 						event.preventDefault();
