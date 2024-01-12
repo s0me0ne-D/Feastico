@@ -1,0 +1,11 @@
+@import "./animations", "./colors";
+
+.color-button {
+	background-color: $BUTTON_COLOR;
+	border-radius: 3px;
+	color: white;
+	transition: $BUTTON_TRANSITION;
+	&:hover {
+		background-color: $BUTTON_COLOR_HOVER;
+	}
+}

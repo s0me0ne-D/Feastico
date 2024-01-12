@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./ingredients.scss";
 import { IngredientsComponent } from "./IngredientsComponent";
 import { setListToToDoList } from "../../../../utils/setListToToDoList";
-import { Popup } from "../Popup";
+import { ShoppingListPopup } from "./ShoppingListPopup";
 type Sections = ISection[];
 
 interface ISection {
@@ -95,7 +95,7 @@ export const Ingredients = ({ sections, dishName }: { sections: Sections; dishNa
 				Add to Shopping List
 			</button>
 			{attachedShoppingList.attached || attachedShoppingList.error ? (
-				<Popup
+				<ShoppingListPopup
 					isError={attachedShoppingList.error}
 					setShowPopup={setAttachedShoppingList}
 					scrolledPixels={scrolledPixels}

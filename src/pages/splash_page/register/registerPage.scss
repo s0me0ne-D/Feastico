@@ -1,6 +1,5 @@
-@import "../../../styles_global/fonts";
-@import "../../../styles_global/colors";
-@import "../../../styles_global/animations";
+@import "../../../styles_global/fonts", "../../../styles_global/colorButton.scss",
+	"../../../styles_global/colors", "../../../styles_global/animations";
 @keyframes form_vision {
 	0% {
 		opacity: 0;
@@ -72,15 +71,8 @@
 		}
 	}
 	.submit_button {
-		background-color: $BUTTON_COLOR;
 		width: 100px;
 		height: 35px;
-		border-radius: 3px;
-		color: white;
-		transition: $BUTTON_TRANSITION;
-		&:hover {
-			background-color: $BUTTON_COLOR_HOVER;
-		}
 	}
 	&_footer {
 		display: flex;

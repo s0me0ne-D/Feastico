@@ -34,7 +34,7 @@ export const SignInPage = ({
 				<div className="register_title">LOGIN</div>
 				<Email changeUserEmail={setUserData} userData={userData} />
 				<Password userData={userData} changeUserPassword={setUserData} />
-				<button className="submit_button" type="submit">
+				<button className="submit_button color-button" type="submit">
 					Login
 				</button>
 				{errorMessage && (

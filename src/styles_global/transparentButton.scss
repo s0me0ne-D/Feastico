@@ -1,0 +1,11 @@
+.transparent-button {
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 3px;
+	color: black;
+	opacity: 0.6;
+	transition: $BUTTON_TRANSITION;
+	&:hover {
+		opacity: 1;
+	}
+}

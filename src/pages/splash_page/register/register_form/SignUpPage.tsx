@@ -43,7 +43,7 @@ export const SignUpPage = ({
 				/>
 				<Password changeUserPassword={setUserData} userData={userData} />
 				<ConfirmPassword userData={userData} />
-				<button className="submit_button" type="submit">
+				<button className="submit_button color-button" type="submit">
 					Sign up
 				</button>
 			</form>

@@ -1,0 +1,10 @@
+@import "./animations", "./colors";
+.popup {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 100%);
+	background-color: white;
+	border: 1px solid $BORDER_COLOR;
+	border-radius: 5px;
+	animation: $VISION_ANIMATION;
+}

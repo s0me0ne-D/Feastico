@@ -1,7 +1,8 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { IUser } from "../interface/user_interfsce";
-import { getAutorizedUser } from "../utils/getAuthorizedUser";
+import { getAutorizedUser, notAuthorizedUser } from "../utils/getAuthorizedUser";
 import { ICurrentUserData } from "../pages/profile_page/profile_page_components/ProfilePageForm";
+import { deleteAccount } from "../utils/deleteAccount";
 
 const initialState: IUser = getAutorizedUser();
 export const user = createSlice({
@@ -28,6 +29,7 @@ export const user = createSlice({
 			const index = state.favourites.findIndex((recipe) => recipe.id === action.payload.id);
 			if (index === -1) {
 				state.favourites.push(action.payload);
+				console.log("add");
 			} else {
 				state.favourites.splice(index, 1);
 			}
@@ -37,8 +39,17 @@ export const user = createSlice({
 			state.email = action.payload.email;
 			state.password = action.payload.password;
 		},
+		deleteUserData: (state) => {
+			deleteAccount({ ...state });
+			state.email = notAuthorizedUser.email;
+			state.favourites = notAuthorizedUser.favourites;
+			state.isAuthorized = notAuthorizedUser.isAuthorized;
+			state.name = notAuthorizedUser.name;
+			state.password = notAuthorizedUser.password;
+			state.userId = notAuthorizedUser.userId;
+		},
 	},
 });
 
 export const userReducer = user.reducer;
-export const { signIn, signOut, changeFavorites, editUserData } = user.actions;
+export const { signIn, signOut, changeFavorites, editUserData, deleteUserData } = user.actions;

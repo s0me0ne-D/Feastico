@@ -1,12 +1,12 @@
 import React from "react";
-import { CheckedAnim } from "../../../media/animations/CheckedAnim";
-import { AttentionAnim } from "../../../media/animations/AttentionAnim";
-import { CloseIcon } from "../../../media/icons/CloseIcon";
-import { IAttachedShoppingList } from "./ingredients/Ingredients";
-import "./popup.scss";
-import { useOutsideClick } from "../../../hooks/useOutsideClick";
+import { CheckedAnim } from "../../../../media/animations/CheckedAnim";
+import { AttentionAnim } from "../../../../media/animations/AttentionAnim";
+import { CloseIcon } from "../../../../media/icons/CloseIcon";
+import { IAttachedShoppingList } from "./Ingredients";
+import "./shoppingListPopup.scss";
+import { useOutsideClick } from "../../../../hooks/useOutsideClick";
 
-export const Popup = ({
+export const ShoppingListPopup = ({
 	isError,
 	setShowPopup,
 	scrolledPixels,
@@ -17,7 +17,11 @@ export const Popup = ({
 }) => {
 	const popupRef = useOutsideClick(() => setShowPopup({ attached: false, error: false }));
 	return (
-		<div ref={popupRef} className="recipe_ingredients_popup" style={{ top: `${scrolledPixels}px` }}>
+		<div
+			ref={popupRef}
+			className="recipe_ingredients_popup popup"
+			style={{ top: `${scrolledPixels}px` }}
+		>
 			{isError ? (
 				<>
 					<div className="recipe_ingredients_popup_close">

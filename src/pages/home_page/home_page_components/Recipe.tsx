@@ -15,7 +15,7 @@ export const Recipe = ({ recipe }: { recipe: any }) => {
 			<img src={recipe.thumbnail_url} alt={recipe.name} />
 			<div className="categorie_recipes_recipe_description">
 				<RatingComponent value={recipe.user_ratings.score} />
-				<span className="categorie_recipes_recipe_description_name">{recipe.name}</span>
+				<span>{recipe.name}</span>
 			</div>
 		</div>
 	);

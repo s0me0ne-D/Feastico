@@ -13,7 +13,7 @@ export const SignOutButton = () => {
 	const userData = useSelector((state: RootStore) => state.userReducer);
 	return (
 		<NavLink
-			className={"sign-out-button"}
+			className={"sign-out-button transparent-button"}
 			to={"/"}
 			onClick={() => {
 				editUserDataStorage({ ...userData, isAuthorized: false });
