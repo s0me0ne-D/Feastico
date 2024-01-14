@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { MoreInfo } from "../../../components/more_info/MoreInfo";
-import { RatingComponent } from "../../../components/RatingComponent";
+import { MoreInfo } from "./more_info/MoreInfo";
+import { RatingComponent } from "./RatingComponent";
 
 export const Recipe = ({ recipe }: { recipe: any }) => {
 	const [showMoreInfo, setShowMoreInfo] = useState(false);

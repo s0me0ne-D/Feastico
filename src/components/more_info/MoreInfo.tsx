@@ -1,13 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { InfoIcon } from "../../media/icons/InfoIcon";
 import "./moreInfo.scss";
+import { Favourite } from "../Favourite";
 
 export const MoreInfo = ({ recipe }: { recipe: any }) => {
 	return (
-		<NavLink to={"/"} className="more-info">
+		<NavLink to={`/recipe/${recipe.id}`} className="more-info">
 			<span className="more-info_title">Go to recipe</span>
-			<InfoIcon />
+			<Favourite recipe={recipe} className="info" />
 		</NavLink>
 	);
 };

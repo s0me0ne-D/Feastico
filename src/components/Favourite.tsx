@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Bookmark } from "../../../media/icons/Bookmark";
+import { Bookmark } from "../media/icons/Bookmark";
 import { useDispatch } from "react-redux";
-import { changeFavorites } from "../../../redux/userSlice";
+import { changeFavorites } from "../redux/userSlice";
 import { useSelector } from "react-redux";
-import { RootStore } from "../../../redux/store";
+import { RootStore } from "../redux/store";
+import "./favorite.scss";
 
-export const Favourite = ({ recipe }: { recipe: any }) => {
+export const Favourite = ({ recipe, className }: { recipe: any; className?: string }) => {
 	const dispatch = useDispatch();
 	const [isFavorite, setIsFavorite] = useState(false);
 	const { favourites } = useSelector((user: RootStore) => user.userReducer);
@@ -21,7 +22,7 @@ export const Favourite = ({ recipe }: { recipe: any }) => {
 		}
 	}, [favourites, recipe.id]);
 	return (
-		<div className="recipe_add">
+		<div className={`recipe_add ${className}`}>
 			<Bookmark isFavorite={isFavorite} onClick={changeFavoritesHandler} />
 		</div>
 	);

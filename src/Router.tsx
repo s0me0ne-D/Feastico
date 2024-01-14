@@ -3,6 +3,7 @@ import { Layout } from "./pages/layout/Layout";
 import { HomePage } from "./pages/home_page/HomePage";
 import { RecipePage } from "./pages/recipe_page/RecipePage";
 import { ProfilePage } from "./pages/profile_page/ProfilePage";
+import { FavoritesPage } from "./pages/favorites_page/FavoritesPage";
 
 export const router = createHashRouter([
 	{
@@ -14,12 +15,16 @@ export const router = createHashRouter([
 				element: <HomePage />,
 			},
 			{
-				path: "/recipe",
+				path: "/recipe/:recipeId",
 				element: <RecipePage />,
 			},
 			{
 				path: "/profile",
 				element: <ProfilePage />,
+			},
+			{
+				path: "/favorites",
+				element: <FavoritesPage />,
 			},
 		],
 	},

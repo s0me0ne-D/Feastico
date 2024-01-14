@@ -12,6 +12,8 @@ h2 {
 		width: 100%;
 		height: 70px;
 		border-bottom: 1px solid $SHADOW_COLOR;
+		display: flex;
+		align-items: center;
 	}
 
 	&_logo {

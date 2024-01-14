@@ -1,0 +1,28 @@
+@import "../styles_global/colors", "../styles_global/animations";
+
+.recipe_add {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	svg {
+		cursor: pointer;
+		path {
+			transition: $BUTTON_TRANSITION;
+		}
+		&:hover {
+			opacity: 0.7;
+			path {
+				fill: $BUTTON_COLOR;
+			}
+		}
+	}
+	.is-favorite {
+		fill: $BUTTON_COLOR;
+	}
+}
+.info {
+	width: fit-content;
+	path {
+		fill: rgba(255, 255, 255, 0.8);
+	}
+}

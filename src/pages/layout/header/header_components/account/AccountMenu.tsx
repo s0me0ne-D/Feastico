@@ -18,7 +18,7 @@ export const AccountMenu = () => {
 						<ProfileIcon />
 						Your profile
 					</NavLink>
-					<NavLink to={"/"}>
+					<NavLink to={"/favorites"}>
 						<FavoritesIcon />
 						Favorites recipes
 					</NavLink>

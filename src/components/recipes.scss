@@ -1,5 +1,5 @@
-@import "../../../styles_global/fonts";
-@import "../../../styles_global/colors";
+@import "../styles_global/fonts";
+@import "../styles_global/colors";
 .categorie {
 	display: flex;
 	flex-direction: column;
@@ -11,9 +11,9 @@
 	}
 	&_recipes {
 		width: 100%;
-		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		justify-items: center;
 		gap: 10px;
 		&_recipe {
 			position: relative;

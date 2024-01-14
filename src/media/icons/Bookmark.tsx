@@ -10,7 +10,11 @@ export const Bookmark = ({ isFavorite, onClick }: { isFavorite: boolean; onClick
 			width="25"
 			onMouseEnter={() => setMouseOn(true)}
 			onMouseLeave={() => setMouseOn(false)}
-			onClick={onClick}
+			onClick={(event) => {
+				onClick();
+				event.preventDefault();
+				event.stopPropagation();
+			}}
 		>
 			<path
 				className={isFavorite ? "is-favorite" : ""}

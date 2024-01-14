@@ -6,11 +6,14 @@ import { RecipeVideo } from "./recipe_page_components/RecipeVideo";
 import { Ingredients } from "./recipe_page_components/ingredients/Ingredients";
 import { Nutritions } from "./recipe_page_components/Nutritions";
 import { Instructions } from "./recipe_page_components/Instructions";
-import { Favourite } from "./recipe_page_components/Favourite";
+import { Favourite } from "../../components/Favourite";
+import { useParams } from "react-router-dom";
 
 export const RecipePage = () => {
 	const [recipe, setRecipe] = useState<any | null>(null);
-	const currentRecipe = cookies.results[7];
+	const recipeId = useParams().recipeId;
+	const currentRecipe = cookies.results[4];
+	console.log(recipeId);
 	useEffect(() => {
 		setRecipe(currentRecipe);
 	}, [currentRecipe]);

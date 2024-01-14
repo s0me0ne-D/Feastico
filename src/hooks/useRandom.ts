@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
-export const useRandom = (recipes: any) => {
+export const useRandom = (recipes: any, value: number) => {
 	const [randomRecipes, setRandomRecipes] = useState<any[]>([]);
 	useEffect(() => {
 		const getRandomRecipes = () => {
 			const randomIndexes: number[] = [];
-			while (randomIndexes.length < 5) {
+			while (randomIndexes.length < value) {
 				const randomIndex = Math.floor(Math.random() * recipes.results.length);
 				if (!randomIndexes.includes(randomIndex)) {
 					randomIndexes.push(randomIndex);
@@ -15,6 +15,6 @@ export const useRandom = (recipes: any) => {
 			setRandomRecipes(selectedRecipes);
 		};
 		getRandomRecipes();
-	}, [recipes]);
+	}, [recipes, value]);
 	return randomRecipes;
 };
