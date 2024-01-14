@@ -21,7 +21,7 @@ export const PopularCategories = () => {
 			<div className="home_page_popular_categories">
 				{popularCategories.map((categorie) => (
 					<NavLink
-						to={"/"}
+						to={`/categorie/${categorie.title}`}
 						key={categorie.title}
 						className="home_page_popular_categories_categorie"
 					>

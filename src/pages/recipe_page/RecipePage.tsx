@@ -8,39 +8,39 @@ import { Nutritions } from "./recipe_page_components/Nutritions";
 import { Instructions } from "./recipe_page_components/Instructions";
 import { Favourite } from "../../components/Favourite";
 import { useParams } from "react-router-dom";
+import { useGetRecipeByIdQuery } from "../../redux/api/api";
 
 export const RecipePage = () => {
-	const [recipe, setRecipe] = useState<any | null>(null);
 	const recipeId = useParams().recipeId;
-	const currentRecipe = cookies.results[4];
-	console.log(recipeId);
+	const { isLoading, data, isError } = useGetRecipeByIdQuery(recipeId);
 	useEffect(() => {
-		setRecipe(currentRecipe);
-	}, [currentRecipe]);
-
-	return recipe ? (
+		console.log(data);
+	}, [data]);
+	return isLoading ? (
+		<>Loading...</>
+	) : data ? (
 		<div className="recipe main-margin">
-			<Favourite recipe={recipe} />
-			<h2>{recipe.name}</h2>
-			<RecipeRating userRating={recipe.user_ratings} />
-			<div className="recipe_description">{recipe.description}</div>
-			<RecipeVideo rendition={recipe.renditions[0]} imgUrl={recipe.thumbnail_url} />
+			<Favourite recipe={data} />
+			<h2>{data.name}</h2>
+			<RecipeRating userRating={data.user_ratings} />
+			<div className="recipe_description">{data.description}</div>
+			<RecipeVideo rendition={data.renditions[0]} imgUrl={data.thumbnail_url} />
 			<div className="recipe_serving">
-				{recipe.prep_time_minutes ? (
+				{data.prep_time_minutes ? (
 					<div className="recipe_serving_block">
 						<span className="recipe_serving_block_title">PREP TIME</span>
-						<span className="recipe_serving_block_context">{recipe.prep_time_minutes} MIN</span>
+						<span className="recipe_serving_block_context">{data.prep_time_minutes} MIN</span>
 					</div>
 				) : null}
 				<div className="recipe_serving_block">
 					<span className="recipe_serving_block_title">SERVINGS</span>
-					<span className="recipe_serving_block_context">{recipe.num_servings} PEOPLE</span>
+					<span className="recipe_serving_block_context">{data.num_servings} PEOPLE</span>
 				</div>
 			</div>
 			<div className="recipe_main">
-				<Ingredients sections={recipe.sections} dishName={recipe.name} />
-				<Instructions instructions={recipe.instructions} />
-				<Nutritions nutrition={recipe.nutrition} />
+				<Ingredients sections={data.sections} dishName={data.name} />
+				<Instructions instructions={data.instructions} />
+				<Nutritions nutrition={data.nutrition} />
 			</div>
 		</div>
 	) : null;

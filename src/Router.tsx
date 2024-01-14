@@ -4,6 +4,7 @@ import { HomePage } from "./pages/home_page/HomePage";
 import { RecipePage } from "./pages/recipe_page/RecipePage";
 import { ProfilePage } from "./pages/profile_page/ProfilePage";
 import { FavoritesPage } from "./pages/favorites_page/FavoritesPage";
+import { CategoriePage } from "./pages/categorie_page/CategoriePage";
 
 export const router = createHashRouter([
 	{
@@ -25,6 +26,10 @@ export const router = createHashRouter([
 			{
 				path: "/favorites",
 				element: <FavoritesPage />,
+			},
+			{
+				path: "/categorie/:categorieName",
+				element: <CategoriePage />,
 			},
 		],
 	},

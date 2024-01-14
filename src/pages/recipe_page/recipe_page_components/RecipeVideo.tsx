@@ -17,7 +17,7 @@ interface IRendition {
 	bit_rate?: number;
 }
 
-export const RecipeVideo = ({ rendition, imgUrl }: { rendition: IRendition; imgUrl: string }) => {
+export const RecipeVideo = ({ rendition, imgUrl }: { rendition?: IRendition; imgUrl: string }) => {
 	const [showPoster, setShowPoster] = useState(true);
 	const videoRef = useRef<HTMLVideoElement | null>(null);
 	const playVideo = () => {
@@ -25,6 +25,7 @@ export const RecipeVideo = ({ rendition, imgUrl }: { rendition: IRendition; imgU
 			videoRef.current.play();
 		}
 	};
+
 	return (
 		<div className="recipe_video">
 			{showPoster && (
@@ -32,17 +33,21 @@ export const RecipeVideo = ({ rendition, imgUrl }: { rendition: IRendition; imgU
 					// style={{ width: `${rendition.width}px` }}
 					className="recipe_video_poster"
 					onClick={() => {
-						setShowPoster(false);
-						playVideo();
+						if (rendition) {
+							setShowPoster(false);
+							playVideo();
+						}
 					}}
 				>
 					<img src={imgUrl} alt="video_poster" />
-					<PlayIcon />
+					{rendition && <PlayIcon />}
 				</div>
 			)}
-			<video ref={videoRef} controls width={"100%"} onPlay={() => setShowPoster(false)}>
-				<source src={rendition.url} type="video/mp4"></source>
-			</video>
+			{rendition && (
+				<video ref={videoRef} controls width={"100%"} onPlay={() => setShowPoster(false)}>
+					<source src={rendition?.url} type="video/mp4"></source>
+				</video>
+			)}
 		</div>
 	);
 };

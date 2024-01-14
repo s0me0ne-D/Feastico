@@ -13,7 +13,7 @@ export const Title = () => {
 				<span className="home_title_description_headline">{recipe.name}</span>
 				<span className="home_title_description_text">{recipe.description}</span>
 				<RatingComponent value={recipe.user_ratings.score} />
-				<NavLink to={"/recipe"}>
+				<NavLink to={`/recipe/${recipe.id}`}>
 					<ArrowRightIcon />
 				</NavLink>
 			</div>
