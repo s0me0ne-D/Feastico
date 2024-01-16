@@ -2,6 +2,7 @@
 	"name": "feastico",
 	"version": "0.1.0",
 	"private": true,
+	"homepage": "https://s0me0ne-d.github.io/Feastico/",
 	"dependencies": {
 		"@dotlottie/react-player": "^1.6.12",
 		"@emotion/react": "^11.11.1",
