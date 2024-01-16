@@ -31,7 +31,14 @@ export const ShoppingListPopup = ({
 						<AttentionAnim />
 						<span>The list already exists</span>
 						<span>
-							Follow the link to view <a href="#">ToDoList</a>
+							Follow the link to view{" "}
+							<a
+								href="https://s0me0ne-d.github.io/to_do_list_redux-toolkit/"
+								rel="noreferrer"
+								target="_blank"
+							>
+								ToDoList
+							</a>
 						</span>
 					</div>
 				</>
@@ -44,7 +51,14 @@ export const ShoppingListPopup = ({
 						<CheckedAnim />
 						<span>Shopping list added.</span>
 						<span>
-							Follow the link to view <a href="#">ToDoList</a>
+							Follow the link to view{" "}
+							<a
+								href="https://s0me0ne-d.github.io/to_do_list_redux-toolkit/"
+								rel="noreferrer"
+								target="_blank"
+							>
+								ToDoList
+							</a>
 						</span>
 					</div>
 				</>
