@@ -29,7 +29,6 @@ export const user = createSlice({
 			const index = state.favourites.findIndex((recipe) => recipe.id === action.payload.id);
 			if (index === -1) {
 				state.favourites.push(action.payload);
-				console.log("add");
 			} else {
 				state.favourites.splice(index, 1);
 			}

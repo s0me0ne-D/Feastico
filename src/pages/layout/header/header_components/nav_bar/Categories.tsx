@@ -13,7 +13,7 @@ export const Categories = ({ categorieHeadline }: { categorieHeadline: Categorie
 		<ul className="section_categories">
 			{categories?.map((categorie) => (
 				<li key={categorie}>
-					<NavLink to={`/categorie/${categorie}`}>{categorie}</NavLink>
+					<NavLink to={`/categorie/${categorie.toLowerCase()}`}>{categorie}</NavLink>
 				</li>
 			))}
 		</ul>

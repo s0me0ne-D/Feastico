@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const recipesApi = createApi({
 	reducerPath: "recipesApi",
 	baseQuery: fetchBaseQuery({
-		baseUrl: "https://tasty.p.rapidapi.com/",
+		baseUrl: "https://tasty.p.rapidapi.com/recipes/",
 		prepareHeaders: (headers, { getState }) => {
 			headers.set("X-RapidAPI-Host", "tasty.p.rapidapi.com");
 			headers.set("X-RapidAPI-Key", process.env.REACT_APP_API_KEY as string);
@@ -12,9 +12,9 @@ export const recipesApi = createApi({
 	}),
 	endpoints: (builder) => ({
 		getRecipeById: builder.query<any, string | undefined>({
-			query: (id) => `recipes/get-more-info?id=${id}`,
+			query: (id) => `get-more-info?id=${id}`,
 		}),
-		getListByName: builder.query<any, string>({
+		getListByName: builder.query<any, string | undefined>({
 			query: (name) => `list?from=0&size=50&q=${name}`,
 		}),
 	}),

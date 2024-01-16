@@ -1,7 +1,7 @@
 export const categoriesHandler = (categorieHeadline: string) => {
 	const desserts = ["Cookies", "Muffins", "Pies", "Under 30 minutes desserts"];
 	const ingredients = ["Beef", "Chicken", "Pasta", "Potato"];
-	const diets = ["Healthy", "Hight pritein", "Low carb", "Vegeterian"];
+	const diets = ["Healthy", "Hight protein", "Low carb", "Vegeterian"];
 	const meals = ["Breakfast", "Desserts", "Dinner", "Lunch", "Snecks"];
 	const popular = [
 		"Christmas",

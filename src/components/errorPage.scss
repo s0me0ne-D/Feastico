@@ -1,0 +1,23 @@
+@import "../styles_global/colors";
+.error-page {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	img {
+		max-width: 300px;
+	}
+	span {
+		font-size: 25px;
+		color: $SHADOW_COLOR_HOVER;
+	}
+	a {
+		color: $BUTTON_COLOR;
+		&:hover {
+			color: $BUTTON_COLOR_HOVER;
+		}
+	}
+}

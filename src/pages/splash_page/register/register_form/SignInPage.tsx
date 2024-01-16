@@ -15,7 +15,6 @@ export const SignInPage = ({
 }) => {
 	const initialUser = useSelector((state: RootStore) => state.userReducer);
 	const [userData, setUserData] = useState<IUser>({ ...initialUser, isAuthorized: true });
-	console.log(userData);
 	const [errorMessage, setErrorMessage] = useState(false);
 	const dispatch = useDispatch();
 	const submit = (event: React.FormEvent<HTMLFormElement>) => {

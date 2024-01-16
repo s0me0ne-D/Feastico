@@ -14,6 +14,8 @@ export const SignUpPage = ({
 }) => {
 	const [userData, setUserData] = useState<IUser>(notAuthorizedUser);
 	const [isRegistered, setIsRegistered] = useState(false);
+	const [errorPassword, setErrorPassword] = useState(false);
+
 	const getRandomId = () => Math.floor(Math.random() * 10000);
 	useEffect(() => {
 		setUserData({ ...userData, userId: getRandomId() });
@@ -24,7 +26,7 @@ export const SignUpPage = ({
 			<form
 				className="register_form"
 				onSubmit={(event) => {
-					if (!isRegistered) {
+					if (!isRegistered && !errorPassword) {
 						setLocalStorage(userData);
 						setUserData(notAuthorizedUser);
 					} else {
@@ -42,7 +44,11 @@ export const SignUpPage = ({
 					setIsRegistered={setIsRegistered}
 				/>
 				<Password changeUserPassword={setUserData} userData={userData} />
-				<ConfirmPassword userData={userData} />
+				<ConfirmPassword
+					userData={userData}
+					errorPassword={errorPassword}
+					setErrorPassword={setErrorPassword}
+				/>
 				<button className="submit_button color-button" type="submit">
 					Sign up
 				</button>

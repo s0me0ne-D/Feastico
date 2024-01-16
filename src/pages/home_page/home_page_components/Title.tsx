@@ -1,5 +1,5 @@
 import React from "react";
-import { desserts } from "../../../store/meals_recipes/desserts";
+import { desserts } from "../../../store/desserts";
 import "./title.scss";
 import { RatingComponent } from "../../../components/RatingComponent";
 import ArrowRightIcon from "../../../media/icons/ArrowRightIcon";

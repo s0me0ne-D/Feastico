@@ -2,9 +2,16 @@ import React, { useEffect, useState } from "react";
 import { PasswordIcon } from "../../../../../media/icons/PasswordIcon";
 import { IUser } from "../../../../../interface/user_interfsce";
 
-export const ConfirmPassword = ({ userData }: { userData: IUser }) => {
+export const ConfirmPassword = ({
+	userData,
+	errorPassword,
+	setErrorPassword,
+}: {
+	userData: IUser;
+	errorPassword: boolean;
+	setErrorPassword: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
 	const [confirmPassword, setConfirmPassword] = useState("");
-	const [errorPassword, setErrorPassword] = useState(false);
 	useEffect(() => {
 		userData.password === "" && setConfirmPassword("");
 	}, [userData]);

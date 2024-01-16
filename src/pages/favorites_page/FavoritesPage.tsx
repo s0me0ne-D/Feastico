@@ -13,7 +13,11 @@ export const FavoritesPage = () => {
 				<BookmarksCollect />
 				<span>Favorites</span>
 			</div>
-			<Recipes recipes={favourites} />
+			{favourites.length > 0 ? (
+				<Recipes recipes={favourites} />
+			) : (
+				<span className="have-not-message">You haven`t added any favorites yet.</span>
+			)}
 		</div>
 	);
 };
