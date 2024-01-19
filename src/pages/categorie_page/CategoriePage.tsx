@@ -8,15 +8,15 @@ import { ErrorPage } from "../../components/ErrorPage";
 
 export const CategoriePage = () => {
 	const categorie = useParams().categorieName;
-	const { isLoading, data, isError } = useGetListByNameQuery(categorie);
+	const { isLoading, data, isError, isFetching } = useGetListByNameQuery(categorie);
 	return (
 		<div className="categorie-page main-margin">
 			<h2 className="categorie-page_title">{categorie?.toUpperCase()}</h2>
-			{isLoading ? (
+			{isLoading || isFetching ? (
 				<Loader />
-			) : data ? (
+			) : data.results.length > 0 ? (
 				<Recipes recipes={data.results} />
-			) : isError ? (
+			) : isError || data.results.length === 0 ? (
 				<ErrorPage />
 			) : null}
 		</div>

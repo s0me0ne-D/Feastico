@@ -13,10 +13,10 @@ import { ErrorPage } from "../../components/ErrorPage";
 
 export const RecipePage = () => {
 	const recipeId = useParams().recipeId;
-	const { isLoading, data, isError } = useGetRecipeByIdQuery(recipeId);
+	const { isLoading, data, isError, isFetching } = useGetRecipeByIdQuery(recipeId);
 	return (
 		<div className="recipe main-margin">
-			{isLoading ? (
+			{isLoading || isFetching ? (
 				<Loader />
 			) : data ? (
 				<>

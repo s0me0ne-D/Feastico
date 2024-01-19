@@ -13,7 +13,6 @@ export const SearchLine = ({
 	const [searchValue, setSearchValue] = useState("");
 
 	const debounceSearch = useDebounce(searchValue, 700);
-	console.log(searchValue);
 	return (
 		<div className="search_line" ref={searchRef}>
 			<div className="search_line_wrapper">
