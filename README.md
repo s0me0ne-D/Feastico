@@ -13,10 +13,10 @@ Convenient logging stores your data in local storage, while the use of debounce 
 ## Technologies used 🛠️
 
 - React
-- Type Script
-- Java Script
+- TypeScript
+- JavaScript
 - SASS
-- Redux Toolkit
+- Redux toolkit
 - RTK Query
 
 ## Libraries used 📚
