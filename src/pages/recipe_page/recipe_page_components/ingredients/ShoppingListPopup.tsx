@@ -32,11 +32,7 @@ export const ShoppingListPopup = ({
 						<span>The list already exists</span>
 						<span>
 							Follow the link to view{" "}
-							<a
-								href="https://s0me0ne-d.github.io/to_do_list_redux-toolkit/"
-								rel="noreferrer"
-								target="_blank"
-							>
+							<a href="https://s0me0ne-d.github.io/to_do_list/" rel="noreferrer" target="_blank">
 								ToDoList
 							</a>
 						</span>
@@ -52,11 +48,7 @@ export const ShoppingListPopup = ({
 						<span>Shopping list added.</span>
 						<span>
 							Follow the link to view{" "}
-							<a
-								href="https://s0me0ne-d.github.io/to_do_list_redux-toolkit/"
-								rel="noreferrer"
-								target="_blank"
-							>
+							<a href="https://s0me0ne-d.github.io/to_do_list/" rel="noreferrer" target="_blank">
 								ToDoList
 							</a>
 						</span>
