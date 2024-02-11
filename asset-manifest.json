@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Feastico/static/css/main.f3029a6e.css",
-    "main.js": "/Feastico/static/js/main.2a6adb13.js",
+    "main.js": "/Feastico/static/js/main.51e99a88.js",
     "static/js/862.618dbd79.chunk.js": "/Feastico/static/js/862.618dbd79.chunk.js",
     "static/js/160.0386dacd.chunk.js": "/Feastico/static/js/160.0386dacd.chunk.js",
     "static/js/956.c69e99ae.chunk.js": "/Feastico/static/js/956.c69e99ae.chunk.js",
@@ -19,12 +19,12 @@
     "static/media/AccountLogo.svg": "/Feastico/static/media/AccountLogo.f7b592d6f71021d8f7685f9557b5ec3a.svg",
     "index.html": "/Feastico/index.html",
     "main.f3029a6e.css.map": "/Feastico/static/css/main.f3029a6e.css.map",
-    "main.2a6adb13.js.map": "/Feastico/static/js/main.2a6adb13.js.map",
+    "main.51e99a88.js.map": "/Feastico/static/js/main.51e99a88.js.map",
     "374.a61536de.chunk.js.map": "/Feastico/static/js/374.a61536de.chunk.js.map",
     "777.3ef3f4b3.chunk.js.map": "/Feastico/static/js/777.3ef3f4b3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f3029a6e.css",
-    "static/js/main.2a6adb13.js"
+    "static/js/main.51e99a88.js"
   ]
 }
