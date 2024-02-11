@@ -5,11 +5,13 @@ import { RecipePage } from "./pages/recipe_page/RecipePage";
 import { ProfilePage } from "./pages/profile_page/ProfilePage";
 import { FavoritesPage } from "./pages/favorites_page/FavoritesPage";
 import { CategoriePage } from "./pages/categorie_page/CategoriePage";
+import { ErrorPage } from "./components/ErrorPage";
 
 export const router = createHashRouter([
 	{
 		path: "/",
 		element: <Layout />,
+		errorElement: <ErrorPage />,
 		children: [
 			{
 				index: true,

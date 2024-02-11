@@ -6,11 +6,13 @@ import { ProfileLogo } from "../../media/icons/ProfileLogo";
 import { useSelector } from "react-redux";
 import { RootStore } from "../../redux/store";
 import { ConfirmationPopup } from "./profile_page_components/ConfirmationPopup";
+import { SaveConfirmationPopup } from "./profile_page_components/SaveConfirmationPopup";
 
 export const ProfilePage = () => {
 	const { name } = useSelector((user: RootStore) => user.userReducer);
 	const [errorPassword, setErrorPassword] = useState<boolean>(false);
 	const [showConfirmationPopup, setShowConfirmationPopup] = useState<boolean>(false);
+	const [showSaveConfirmationPopup, setShowSaveConfirmationPopup] = useState<boolean>(false);
 	const [scrolledPixels, setScrollPixels] = useState(0);
 	useEffect(() => {
 		setScrollPixels(Math.round(window.scrollY));
@@ -25,7 +27,11 @@ export const ProfilePage = () => {
 				<ProfileLogo />
 				<span>{name}</span>
 			</div>
-			<ProfilePageForm errorPassword={errorPassword} setErrorPassword={setErrorPassword} />
+			<ProfilePageForm
+				errorPassword={errorPassword}
+				setErrorPassword={setErrorPassword}
+				setShowSaveConfirmationPopup={setShowSaveConfirmationPopup}
+			/>
 			<div className="profile_conteiner">
 				<SignOutButton />
 				<button
@@ -37,6 +43,9 @@ export const ProfilePage = () => {
 			</div>
 			{showConfirmationPopup && (
 				<ConfirmationPopup top={scrolledPixels} setToShow={setShowConfirmationPopup} />
+			)}
+			{showSaveConfirmationPopup && (
+				<SaveConfirmationPopup setShowSaveConfirmationPopup={setShowSaveConfirmationPopup} />
 			)}
 		</div>
 	);

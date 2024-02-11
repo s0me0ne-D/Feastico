@@ -4,15 +4,18 @@ import { IAttachedShoppingList } from "../../pages/recipe_page/recipe_page_compo
 export const CloseIcon = ({
 	onClick,
 	setShowPopup,
+	setShowSaveConfirmationPopup,
 }: {
 	onClick?: React.Dispatch<React.SetStateAction<boolean>>;
 	setShowPopup?: React.Dispatch<React.SetStateAction<IAttachedShoppingList>>;
+	setShowSaveConfirmationPopup?: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
 	return (
 		<svg
 			onClick={(event) => {
 				onClick && onClick(false);
 				setShowPopup && setShowPopup({ attached: false, error: false });
+				setShowSaveConfirmationPopup && setShowSaveConfirmationPopup(false);
 				event.preventDefault();
 				event.stopPropagation();
 			}}

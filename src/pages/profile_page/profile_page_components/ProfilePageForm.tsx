@@ -15,9 +15,11 @@ export type ICurrentUserData = Omit<IUser, "favourites" | "isAuthorized" | "user
 export const ProfilePageForm = ({
 	errorPassword,
 	setErrorPassword,
+	setShowSaveConfirmationPopup,
 }: {
 	errorPassword: boolean;
 	setErrorPassword: React.Dispatch<React.SetStateAction<boolean>>;
+	setShowSaveConfirmationPopup: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
 	const { email, name, password } = useSelector((user: RootStore) => user.userReducer);
 	const [currentUserData, setCurrentUserData] = useState<ICurrentUserData>({
@@ -32,6 +34,7 @@ export const ProfilePageForm = ({
 			onSubmit={(event) => {
 				if (!errorPassword) {
 					dispatch(editUserData(currentUserData));
+					setShowSaveConfirmationPopup(true);
 				} else {
 					event.preventDefault();
 					event.stopPropagation();
